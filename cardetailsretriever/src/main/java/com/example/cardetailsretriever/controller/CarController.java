@@ -47,11 +47,14 @@ public class CarController
     public List<Car> getAllCars() {
         return carService.getAllCars();
     }
+
  
     @GetMapping("/top/{n}")
     public ResponseEntity<List<Car>> getTopCarsByPrice(@PathVariable int n) {
         List<Car> cars= carService.getTopNCarsByPrice(n);
+        System.out.println("hello");
         return ResponseEntity.ok(cars);
+        
     }
 
 }
